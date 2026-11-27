@@ -1,0 +1,430 @@
+TAP version 13
+# Subtest: exportTasksCsv：返回值以单个 U+FEFF BOM 开头
+ok 1 - exportTasksCsv：返回值以单个 U+FEFF BOM 开头
+  ---
+  duration_ms: 1.5372
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv([])：只导出表头行 + CRLF
+ok 2 - exportTasksCsv([])：只导出表头行 + CRLF
+  ---
+  duration_ms: 0.212
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：表头固定为 7 列且不随界面语言本地化
+ok 3 - exportTasksCsv：表头固定为 7 列且不随界面语言本地化
+  ---
+  duration_ms: 1.9582
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：单条任务的列顺序与字段值完全一致
+ok 4 - exportTasksCsv：单条任务的列顺序与字段值完全一致
+  ---
+  duration_ms: 0.4631
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：status/priority 导出枚举原值而非中文标签
+ok 5 - exportTasksCsv：status/priority 导出枚举原值而非中文标签
+  ---
+  duration_ms: 0.2913
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：多条任务按入参顺序逐条输出，不重排
+ok 6 - exportTasksCsv：多条任务按入参顺序逐条输出，不重排
+  ---
+  duration_ms: 0.2916
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：每行以 CRLF 结尾，且无裸 LF / 裸 CR 行分隔
+ok 7 - exportTasksCsv：每行以 CRLF 结尾，且无裸 LF / 裸 CR 行分隔
+  ---
+  duration_ms: 0.6481
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：含逗号的字段整体加双引号
+ok 8 - exportTasksCsv：含逗号的字段整体加双引号
+  ---
+  duration_ms: 0.3214
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：字段内双引号双写并整体加引号
+ok 9 - exportTasksCsv：字段内双引号双写并整体加引号
+  ---
+  duration_ms: 1.9262
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：逗号与双引号同时出现时先包裹再双写
+ok 10 - exportTasksCsv：逗号与双引号同时出现时先包裹再双写
+  ---
+  duration_ms: 0.5939
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：中文全角逗号不是分隔符，不触发加引号
+ok 11 - exportTasksCsv：中文全角逗号不是分隔符，不触发加引号
+  ---
+  duration_ms: 0.3032
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：描述内 LF 被包裹且原样保留
+ok 12 - exportTasksCsv：描述内 LF 被包裹且原样保留
+  ---
+  duration_ms: 0.1927
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：描述内 CRLF 被包裹且原样保留
+ok 13 - exportTasksCsv：描述内 CRLF 被包裹且原样保留
+  ---
+  duration_ms: 0.1167
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：= 开头加 ASCII 单引号
+ok 14 - exportTasksCsv：= 开头加 ASCII 单引号
+  ---
+  duration_ms: 0.116
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：+ 开头加 ASCII 单引号
+ok 15 - exportTasksCsv：+ 开头加 ASCII 单引号
+  ---
+  duration_ms: 0.0993
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：- 开头加 ASCII 单引号
+ok 16 - exportTasksCsv：- 开头加 ASCII 单引号
+  ---
+  duration_ms: 0.1009
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：@ 开头加 ASCII 单引号
+ok 17 - exportTasksCsv：@ 开头加 ASCII 单引号
+  ---
+  duration_ms: 0.1027
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：前导空格后的公式字符同样防护，前缀加在原值最前
+ok 18 - exportTasksCsv：前导空格后的公式字符同样防护，前缀加在原值最前
+  ---
+  duration_ms: 0.098
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：制表符开头的值加单引号
+ok 19 - exportTasksCsv：制表符开头的值加单引号
+  ---
+  duration_ms: 0.0935
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：换行开头的值加单引号并按换行规则包裹
+ok 20 - exportTasksCsv：换行开头的值加单引号并按换行规则包裹
+  ---
+  duration_ms: 0.0943
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：回车开头的值加单引号并按回车规则包裹
+ok 21 - exportTasksCsv：回车开头的值加单引号并按回车规则包裹
+  ---
+  duration_ms: 0.0954
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：公式防护先于转义（危险值含逗号时先加前缀再包裹）
+ok 22 - exportTasksCsv：公式防护先于转义（危险值含逗号时先加前缀再包裹）
+  ---
+  duration_ms: 0.0938
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：普通中文与普通文本不误加单引号
+ok 23 - exportTasksCsv：普通中文与普通文本不误加单引号
+  ---
+  duration_ms: 0.1044
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：空字符串 description 导出空单元格
+ok 24 - exportTasksCsv：空字符串 description 导出空单元格
+  ---
+  duration_ms: 0.0942
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：description 为 null 时导出空单元格且不抛错
+ok 25 - exportTasksCsv：description 为 null 时导出空单元格且不抛错
+  ---
+  duration_ms: 0.0926
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：description 为 undefined 时导出空单元格且不抛错
+ok 26 - exportTasksCsv：description 为 undefined 时导出空单元格且不抛错
+  ---
+  duration_ms: 0.0934
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：description 为其它非字符串类型时整体抛 ValidationError
+ok 27 - exportTasksCsv：description 为其它非字符串类型时整体抛 ValidationError
+  ---
+  duration_ms: 0.5681
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：非数组入参抛 ValidationError
+ok 28 - exportTasksCsv：非数组入参抛 ValidationError
+  ---
+  duration_ms: 0.3122
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：数组中含非对象元素时整体抛 ValidationError
+ok 29 - exportTasksCsv：数组中含非对象元素时整体抛 ValidationError
+  ---
+  duration_ms: 0.215
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：缺少 id、空白 id 或非字符串 id 时抛 ValidationError
+ok 30 - exportTasksCsv：缺少 id、空白 id 或非字符串 id 时抛 ValidationError
+  ---
+  duration_ms: 0.2253
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：title 为 null/undefined 或非字符串时抛 ValidationError
+ok 31 - exportTasksCsv：title 为 null/undefined 或非字符串时抛 ValidationError
+  ---
+  duration_ms: 0.225
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：非法 status 抛 ValidationError
+ok 32 - exportTasksCsv：非法 status 抛 ValidationError
+  ---
+  duration_ms: 0.2092
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：非法 priority 抛 ValidationError
+ok 33 - exportTasksCsv：非法 priority 抛 ValidationError
+  ---
+  duration_ms: 0.2102
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：任一条非法即整体失败，不返回部分结果
+ok 34 - exportTasksCsv：任一条非法即整体失败，不返回部分结果
+  ---
+  duration_ms: 0.1417
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：不修改入参数组与任务对象
+ok 35 - exportTasksCsv：不修改入参数组与任务对象
+  ---
+  duration_ms: 0.2769
+  type: 'test'
+  ...
+# Subtest: exportTasksCsv：冻结的数组与任务对象也可安全导出
+ok 36 - exportTasksCsv：冻结的数组与任务对象也可安全导出
+  ---
+  duration_ms: 0.2007
+  type: 'test'
+  ...
+# Subtest: createTask：生成默认字段、UUID 与合法时间戳
+ok 37 - createTask：生成默认字段、UUID 与合法时间戳
+  ---
+  duration_ms: 5.5455
+  type: 'test'
+  ...
+# Subtest: createTask：每次生成不同 id
+ok 38 - createTask：每次生成不同 id
+  ---
+  duration_ms: 0.6655
+  type: 'test'
+  ...
+# Subtest: createTask：接受显式状态与优先级
+ok 39 - createTask：接受显式状态与优先级
+  ---
+  duration_ms: 0.2888
+  type: 'test'
+  ...
+# Subtest: createTask：忽略输入中的 id 与时间字段
+ok 40 - createTask：忽略输入中的 id 与时间字段
+  ---
+  duration_ms: 0.2953
+  type: 'test'
+  ...
+# Subtest: createTask：标题 trim 后 1–100 字边界
+ok 41 - createTask：标题 trim 后 1–100 字边界
+  ---
+  duration_ms: 0.7476
+  type: 'test'
+  ...
+# Subtest: createTask：按 Unicode 码点计数（100 个 emoji 合法）
+ok 42 - createTask：按 Unicode 码点计数（100 个 emoji 合法）
+  ---
+  duration_ms: 0.2571
+  type: 'test'
+  ...
+# Subtest: createTask：非法标题类型与非法枚举均抛 ValidationError
+ok 43 - createTask：非法标题类型与非法枚举均抛 ValidationError
+  ---
+  duration_ms: 0.3946
+  type: 'test'
+  ...
+# Subtest: createTask：描述可选、会 trim、非字符串报错
+ok 44 - createTask：描述可选、会 trim、非字符串报错
+  ---
+  duration_ms: 0.2741
+  type: 'test'
+  ...
+# Subtest: updateTask：只更新 patch 字段并返回新对象，不改入参
+ok 45 - updateTask：只更新 patch 字段并返回新对象，不改入参
+  ---
+  duration_ms: 0.5641
+  type: 'test'
+  ...
+# Subtest: updateTask：id 与 createdAt 恒定，updatedAt 被刷新
+ok 46 - updateTask：id 与 createdAt 恒定，updatedAt 被刷新
+  ---
+  duration_ms: 10.5382
+  type: 'test'
+  ...
+# Subtest: updateTask：patch 中的 id/createdAt/未知字段被忽略
+ok 47 - updateTask：patch 中的 id/createdAt/未知字段被忽略
+  ---
+  duration_ms: 0.5141
+  type: 'test'
+  ...
+# Subtest: updateTask：非法 patch 抛错且不产生半更新对象
+ok 48 - updateTask：非法 patch 抛错且不产生半更新对象
+  ---
+  duration_ms: 0.6075
+  type: 'test'
+  ...
+# Subtest: updateTask：空 patch 保持业务字段，仅刷新 updatedAt
+ok 49 - updateTask：空 patch 保持业务字段，仅刷新 updatedAt
+  ---
+  duration_ms: 0.1468
+  type: 'test'
+  ...
+# Subtest: filterTasks：无筛选返回全部任务且不修改原数组
+ok 50 - filterTasks：无筛选返回全部任务且不修改原数组
+  ---
+  duration_ms: 0.4437
+  type: 'test'
+  ...
+# Subtest: filterTasks：空字符串/all/null/undefined 视为不筛选
+ok 51 - filterTasks：空字符串/all/null/undefined 视为不筛选
+  ---
+  duration_ms: 0.2419
+  type: 'test'
+  ...
+# Subtest: filterTasks：query 不区分大小写匹配标题与描述
+ok 52 - filterTasks：query 不区分大小写匹配标题与描述
+  ---
+  duration_ms: 0.5149
+  type: 'test'
+  ...
+# Subtest: filterTasks：按状态与优先级筛选
+ok 53 - filterTasks：按状态与优先级筛选
+  ---
+  duration_ms: 0.2998
+  type: 'test'
+  ...
+# Subtest: filterTasks：query 与状态、优先级组合
+ok 54 - filterTasks：query 与状态、优先级组合
+  ---
+  duration_ms: 0.1491
+  type: 'test'
+  ...
+# Subtest: filterTasks：非法枚举与非法任务数组抛 ValidationError
+ok 55 - filterTasks：非法枚举与非法任务数组抛 ValidationError
+  ---
+  duration_ms: 0.196
+  type: 'test'
+  ...
+# Subtest: getStats：空数组全为 0
+ok 56 - getStats：空数组全为 0
+  ---
+  duration_ms: 0.1871
+  type: 'test'
+  ...
+# Subtest: getStats：统计三列数量并计算完成率
+ok 57 - getStats：统计三列数量并计算完成率
+  ---
+  duration_ms: 0.1198
+  type: 'test'
+  ...
+# Subtest: getStats：完成率四舍五入为 0–100 整数
+ok 58 - getStats：完成率四舍五入为 0–100 整数
+  ---
+  duration_ms: 0.1419
+  type: 'test'
+  ...
+# Subtest: getStats：非法参数抛 ValidationError
+ok 59 - getStats：非法参数抛 ValidationError
+  ---
+  duration_ms: 0.1661
+  type: 'test'
+  ...
+# Subtest: serializeTasks：输出格式化 JSON，可被 parseImport 原样导回
+ok 60 - serializeTasks：输出格式化 JSON，可被 parseImport 原样导回
+  ---
+  duration_ms: 0.4681
+  type: 'test'
+  ...
+# Subtest: serializeTasks：描述缺省补空字符串；非数组抛错
+ok 61 - serializeTasks：描述缺省补空字符串；非数组抛错
+  ---
+  duration_ms: 0.2041
+  type: 'test'
+  ...
+# Subtest: parseImport：接受合法数组并保留 id/时间
+ok 62 - parseImport：接受合法数组并保留 id/时间
+  ---
+  duration_ms: 0.1445
+  type: 'test'
+  ...
+# Subtest: parseImport：必须为数组
+ok 63 - parseImport：必须为数组
+  ---
+  duration_ms: 0.2963
+  type: 'test'
+  ...
+# Subtest: parseImport：六字段缺失或类型错误整体拒绝
+ok 64 - parseImport：六字段缺失或类型错误整体拒绝
+  ---
+  duration_ms: 0.7628
+  type: 'test'
+  ...
+# Subtest: parseImport：拒绝重复 id（含 trim 后重复）
+ok 65 - parseImport：拒绝重复 id（含 trim 后重复）
+  ---
+  duration_ms: 0.4344
+  type: 'test'
+  ...
+# Subtest: parseImport：拒绝非对象条目与空数组以外的非法结构
+ok 66 - parseImport：拒绝非对象条目与空数组以外的非法结构
+  ---
+  duration_ms: 0.2488
+  type: 'test'
+  ...
+# Subtest: parseImport：一条非法则整体失败，不返回部分结果
+ok 67 - parseImport：一条非法则整体失败，不返回部分结果
+  ---
+  duration_ms: 0.2017
+  type: 'test'
+  ...
+# Subtest: parseImport：接受已解析的数组对象（非字符串输入）
+ok 68 - parseImport：接受已解析的数组对象（非字符串输入）
+  ---
+  duration_ms: 0.1277
+  type: 'test'
+  ...
+# Subtest: parseImport：空数组合法（清空后导入空列表）
+ok 69 - parseImport：空数组合法（清空后导入空列表）
+  ---
+  duration_ms: 0.1075
+  type: 'test'
+  ...
+# Subtest: 领域常量与错误类型导出完整
+ok 70 - 领域常量与错误类型导出完整
+  ---
+  duration_ms: 0.2243
+  type: 'test'
+  ...
+1..70
+# tests 70
+# suites 0
+# pass 70
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 152.7815
